@@ -1,0 +1,6 @@
+name: mikaMBedwarsQuests
+version: '0.1-SNAPSHOT'
+main: ir.mohika.mikambedwarsquests.MikaMBedwarsQuests
+authors: [ imMohika ]
+website: im.mohika.ir
+depend: [ MBedwars ]
