@@ -1,7 +1,6 @@
 package ir.mohika.mikambedwarsquests;
 
 import de.marcely.bedwars.api.BedwarsAPI;
-import de.marcely.bedwars.api.BedwarsAddon;
 import ir.mohika.mikambedwarsquests.config.Config;
 import ir.mohika.mikambedwarsquests.config.Messages;
 import ir.mohika.mikambedwarsquests.config.QuestsConfig;
@@ -10,9 +9,7 @@ import ir.mohika.mikambedwarsquests.quest.Quests;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.jetbrains.annotations.Nullable;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.logging.Logger;
 

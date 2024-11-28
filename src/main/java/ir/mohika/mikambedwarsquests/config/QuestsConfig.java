@@ -50,7 +50,7 @@ public class QuestsConfig {
   @Getter
   @NoArgsConstructor
   public static class Quest {
-    @Comment("DAILY or WEEKLY")
+    @Comment("DAILY, WEEKLY, CHALLENGE")
     private QuestType type = QuestType.WEEKLY;
 
     private QuestObjective objective = new QuestObjective();

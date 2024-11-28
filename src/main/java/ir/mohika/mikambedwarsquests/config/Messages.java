@@ -30,6 +30,22 @@ public class Messages {
     instance = ConfigManager.load("messages", dataFolder, Messages.class);
   }
 
+  @Comment({"Placeholders:", "-- {quest}: quest name"})
+  private String dailyQuestAlreadyCompleted =
+      "&cYou have already completed the {quest} &cquest today.";
+
+  public String dailyQuestAlreadyCompleted(String questName, Player player) {
+    return Message.build(dailyQuestAlreadyCompleted).placeholder("quest", questName).done(player);
+  }
+
+  @Comment({"Placeholders:", "-- {quest}: quest name"})
+  private String weeklyQuestAlreadyCompleted =
+      "&cYou have already completed the {quest} &cquest this week.";
+
+  public String weeklyQuestAlreadyCompleted(String questName, Player player) {
+    return Message.build(weeklyQuestAlreadyCompleted).placeholder("quest", questName).done(player);
+  }
+
   private GuiMessages gui = new GuiMessages();
 
   @Configuration

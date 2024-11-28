@@ -40,6 +40,8 @@ public class QuestsAddon extends BedwarsAddon {
     manager.registerEvents(new ShopBuyListener(), plugin()); // for BUY_FROM_SHOP
     manager.registerEvents(new SpecialItemListener(), plugin()); // for USE_SPECIAL_ITEM
     manager.registerEvents(new UpgradeBuyListener(), plugin()); // for BUY_UPGRADE
+
+    manager.registerEvents(new QuitArenaListener(), plugin()); // for resetting challenge progress
   }
 
   public void unregisterAddon() {
