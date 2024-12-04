@@ -98,9 +98,7 @@ public class QuestsConfig {
         new Config.Item(
             Material.PAPER,
             "&7Bed Removal Co.",
-            List.of("", "&7Break &a25 &7beds", "", "&fRewards&8:", "&a+100 &7Coins", ""));
-
-    @Comment("Quest item's slot in quests gui")
-    private int slot = 13;
+            List.of("", "&7Break &a25 &7beds", "", "&fRewards&8:", "&a+100 &7Coins", ""),
+            (short) 0);
   }
 }

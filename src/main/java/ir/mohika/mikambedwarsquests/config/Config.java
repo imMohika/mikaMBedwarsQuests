@@ -67,9 +67,17 @@ public class Config {
     private int radius = 15;
   }
 
-  public record Item(Material material, String name, List<String> lore) {
-    public ItemStack getItemStack() {
-      return ItemBuilder.builder().material(material).name(name).lores(lore).build().itemStack();
+  public record Item(
+      Material material, @Nullable String name, @Nullable List<String> lore, @Nullable Short data) {
+    public ItemStack itemStack() {
+      ItemBuilder.ItemBuilderBuilder builder = ItemBuilder.builder().material(material).name(name);
+      if (lore != null) {
+        builder.lores(lore);
+      }
+      if (data != null) {
+        builder.damage(data);
+      }
+      return builder.build().itemStack();
     }
   }
 }

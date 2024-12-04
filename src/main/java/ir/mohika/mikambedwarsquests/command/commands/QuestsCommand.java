@@ -1,6 +1,5 @@
-package ir.mohika.mikambedwarsquests.command;
+package ir.mohika.mikambedwarsquests.command.commands;
 
-import de.marcely.bedwars.api.BedwarsAPI;
 import de.marcely.bedwars.api.command.CommandHandler;
 import de.marcely.bedwars.api.command.SubCommand;
 import ir.mohika.mikambedwarsquests.gui.QuestGui;
@@ -15,17 +14,13 @@ import java.util.List;
 import static ir.mohika.mikambedwarsquests.MikaMBedwarsQuests.plugin;
 
 public class QuestsCommand implements CommandHandler {
-  private SubCommand command;
-
   @Override
   public Plugin getPlugin() {
     return plugin();
   }
 
   @Override
-  public void onRegister(SubCommand subCommand) {
-    this.command = subCommand;
-  }
+  public void onRegister(SubCommand subCommand) {}
 
   @Override
   public void onFire(CommandSender sender, String fullUsage, String[] args) {
@@ -39,22 +34,5 @@ public class QuestsCommand implements CommandHandler {
   @Override
   public @Nullable List<String> onAutocomplete(CommandSender sender, String[] args) {
     return null;
-  }
-
-  public void register() {
-    final SubCommand cmd = BedwarsAPI.getRootCommandsCollection().addCommand("quests");
-    if (cmd == null) return;
-
-    cmd.setOnlyForPlayers(true);
-    cmd.setUsage("");
-    cmd.setHandler(new QuestsCommand());
-
-    this.command = cmd;
-  }
-
-  public void unregister() {
-    if (command != null) {
-      BedwarsAPI.getRootCommandsCollection().removeCommand(command);
-    }
   }
 }

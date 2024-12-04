@@ -67,9 +67,9 @@ public class Quest {
     }
   }
 
-  public record QuestItem(Config.Item item, int slot) {
+  public record QuestItem(Config.Item item) {
     public static QuestItem from(QuestsConfig.QuestItem config) {
-      return new QuestItem(config.item(), config.slot());
+      return new QuestItem(config.item());
     }
   }
 }

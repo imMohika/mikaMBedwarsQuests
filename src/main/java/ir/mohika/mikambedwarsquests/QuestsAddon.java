@@ -1,15 +1,14 @@
 package ir.mohika.mikambedwarsquests;
 
+import static ir.mohika.mikambedwarsquests.MikaMBedwarsQuests.plugin;
+
 import de.marcely.bedwars.api.BedwarsAddon;
-import ir.mohika.mikambedwarsquests.command.QuestsCommand;
+import ir.mohika.mikambedwarsquests.command.CommandManager;
 import ir.mohika.mikambedwarsquests.events.*;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 
-import static ir.mohika.mikambedwarsquests.MikaMBedwarsQuests.plugin;
-
 public class QuestsAddon extends BedwarsAddon {
-  private QuestsCommand command;
 
   /**
    * @param plugin The plugin that constructs it
@@ -24,9 +23,7 @@ public class QuestsAddon extends BedwarsAddon {
   }
 
   public void registerAddon() {
-    command = new QuestsCommand();
-    command.register();
-
+    CommandManager.register();
     registerEvents();
   }
 
@@ -45,8 +42,6 @@ public class QuestsAddon extends BedwarsAddon {
   }
 
   public void unregisterAddon() {
-    if (command != null) {
-      command.unregister();
-    }
+    CommandManager.unregister();
   }
 }

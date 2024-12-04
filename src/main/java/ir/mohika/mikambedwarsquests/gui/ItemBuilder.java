@@ -20,14 +20,14 @@ public class ItemBuilder {
   private ItemBuilder(
       Material material,
       int amount,
+      short damage,
       @Nullable String name,
       @Singular List<String> lores,
       @Singular List<ItemFlag> flags) {
-    this.itemStack = new ItemStack(material);
-    this.meta = itemStack.getItemMeta();
-
     if (((amount > material.getMaxStackSize()) || (amount <= 0))) amount = 1;
-    itemStack.setAmount(amount);
+
+    itemStack = new ItemStack(material, amount, damage);
+    this.meta = itemStack.getItemMeta();
 
     if (name != null) {
       meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));

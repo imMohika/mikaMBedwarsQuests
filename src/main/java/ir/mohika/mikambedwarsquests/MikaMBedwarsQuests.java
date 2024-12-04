@@ -2,6 +2,7 @@ package ir.mohika.mikambedwarsquests;
 
 import de.marcely.bedwars.api.BedwarsAPI;
 import ir.mohika.mikambedwarsquests.config.Config;
+import ir.mohika.mikambedwarsquests.config.GuiConfig;
 import ir.mohika.mikambedwarsquests.config.Messages;
 import ir.mohika.mikambedwarsquests.config.QuestsConfig;
 import ir.mohika.mikambedwarsquests.quest.Quest;
@@ -40,6 +41,10 @@ public final class MikaMBedwarsQuests extends JavaPlugin {
             logger.info("Loading quests config...");
             QuestsConfig.load(addon.getDataFolder());
             logger.info("Loaded quests config!");
+
+            logger.info("Loading gui config...");
+            GuiConfig.load(addon.getDataFolder());
+            logger.info("Loaded gui config!");
           } catch (IOException e) {
             getLogger().warning("Failed to load configs");
             e.printStackTrace();
